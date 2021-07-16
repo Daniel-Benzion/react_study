@@ -98,7 +98,7 @@ class Contact extends React.Component {
     return (
       <div id="authorization">
         <h1>{this.state.authorized ? "Contact" : "Enter the Password"}</h1>
-        
+        {this.state.authorized ? contactInfo : login}
       </div>
     );
   }
