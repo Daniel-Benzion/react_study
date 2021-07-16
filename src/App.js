@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import PrimaryBox from './PrimaryBox.jsx'
+import PrimaryBox from './PrimaryBox.jsx';
 
 const friends = [
   {
@@ -69,7 +69,7 @@ class Contact extends React.Component {
   authorize(e) {
     const password = e.target.querySelector(
       'input[type="password"]').value;
-    const auth = password == this.state.password;
+    const auth = password === this.state.password;
     this.setState({
       authorized: auth
     });
@@ -104,10 +104,26 @@ class Contact extends React.Component {
   }
 }
 
+class NavBar extends React.Component {
+  render() {
+    const pages = ['home', 'blog', 'pics', 'bio', 'art', 'shop', 'about', 'contact'];
+    const navLinks = pages.map(page => {
+      return (
+        <a href={'/' + page}>
+          {page}
+        </a>
+      )
+    });
+
+    return <nav>{navLinks}</nav>;
+  }
+}
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <NavBar/>
         <PrimaryBox></PrimaryBox>
         <TonightsPlan />
         <Button />
