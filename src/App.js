@@ -79,7 +79,8 @@ class Contact extends React.Component {
 
     const login = (
       <form action="#">
-
+        <input type="password" placeholder="password"></input>
+        <input type="submit"></input>
       </form>
     );
 
